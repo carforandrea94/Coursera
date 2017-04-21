@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>Part2 - Andrea Carfora </title>
+<style>
+							fieldset{
+								background-color: lightyellow;
+								border:10px solid yellow;
+								margin-bottom: 10px;
+								width: 720px;
+							}
+
+							label{
+								width: 180px;
+								display: inline-block;
+							}
+
+
+							label.chekradio{
+								width:auto;
+							}
+
+							.s1{
+								text-align: center;
+								background: magenta;
+								color: white;
+							}
+
+							.s2{
+								text-align: center;
+								background: red;
+								color: white;
+							}
+
+							textarea{
+								resize: none;
+								width: 360px;
+								height: 50px;
+							}
+
+							.r{
+							text-align:right;
+							}
+
+							.t{
+								vertical-align: top;
+							}
+</style>
+
+</head>
+<body>
+	<h1> Please Enter Your Details For Our Dating Website! </h1>
+	<form>
+
+		<fieldset>
+			<legend> Your Face </legend>
+			<p>
+				<label for="avatar" class="r t">Your image:</label>
+				<input type="file" id="avatar" name="avatar" required>
+			</p>
+			<p>
+				<label for="preview" class="r t"> Image Preview: </label>
+				<img src="" id="preview">
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<legend> Your General Details </legend>
+
+			<p>
+				<label for="name" class="r t"> Name </label>
+				<input type="text" id="name" required placeholder="Your full Name">
+			</p>
+
+			<p>
+				<label for="GenderRadio" class="r t" name="chekradio"> Gender : </label>
+				<input type="radio" name="gender" value="male" required> Male
+				<input type="radio" name="gender" value="female" required> Famele
+			</p>
+
+			<p>
+				<label for="age" class="r t"> Age </label>
+				<input type="number" min="16" max="99" step="1" value="18" required="">
+			</p>
+
+			<p>
+				<label for="bDay" class="r t"> Date of birt :</label>
+				<input type="date" id="bday">
+			</p>
+
+			<p>
+				<label for="myColor" class="r t"> Favourite color: </label>
+				<input type="color" id="color">
+			</p>
+
+			<p>
+				<label for="myCountry" class="r t"> Which Country:</label>
+				<select  id="country">
+												<option value=""></option>
+												<option value="Italy">Italy</option>
+												<option value="Germany">Germay</option>
+												<option value="England">England</option>
+											  <option value="Bulgaria">Bulgaria</option>
+												<option value="Spain">Spain</option>
+												</select>
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Your indication </legend>
+			<p>
+				<label for ="measure" class="r t"> Height: </label>
+				<span class="s1">Short</span> <input type="range" min="0" max="100" step="5" value="50"> <span class="s2">Tall</span>
+			</p>
+
+			<p>
+				<label for ="salary" class="r t"> Salary: </label>
+				<span class="s1">Poor</span> <input type="range" min="0" max="100" step="5" value="50"> <span class="s2">Rich</span>
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<legend> Your Contact Information </legend>
+			<p>
+				<label for="email" class="r t"> Email:</label>
+				<input type="email" required>
+			</p>
+			<p>
+				<label for="tel" class="r t"> Mobile:</label>
+				<input type="tel">
+			</p>
+			<p>
+				<label for="address" class="r t"> Address:</label>
+				<textarea rows="5" cols="60"></textarea>
+			</p>
+			<p>
+				<label class="r t" name="chekradio" for ="boxMethod">Method to contact you: </label>
+					<input type="checkbox" name="email" value="Email"> Email
+				 	<input type="checkbox" name="whatsapp" value="What's App"> What's App
+					<input type="checkbox" name="inapp" value="in App Chat"> in App Chat
+			</p>
+		</fieldset>
+		<input type="submit" name="Submit" value="Submit">
+	</form>
+</body>
+</html>

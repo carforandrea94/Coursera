@@ -1,0 +1,71 @@
+<!doctype>
+<html>
+	<head>
+		<title> Mathcing game</title>
+		<style>
+			div{
+				position: absolute;
+				width:500px; height:500px;
+			}
+
+			#rightSide { left: 500px;
+            border-left: 1px solid black }
+
+			img{
+				position: absolute;
+			}
+
+		</style>
+
+		<script>
+			var numberOfFaces=5;
+			var theLeftSide;
+			var theRightSide;
+			var leftSideImages;
+
+					function generateFaces(){
+							count=0;
+							var theLeftSide = document.getElementById("leftSide");
+
+								while(count<numberOfFaces){
+									var img = document.createElement("img");
+									img.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+									img.style.height="100px";
+									img.style.width="100px";
+									img.style.left =Math.floor(Math.random()*400);
+									img.style.top = Math.floor(Math.random()*400);
+									theLeftSide.appendChild(img);
+									count++;
+								}
+
+								//part3
+								leftSideImages = theLeftSide.cloneNode(true);
+								theRightSide = document.getElementById("rightSide");
+								leftSideImages.removeChild(leftSideImages.lastChild);
+								theRightSide.appendChild(leftSideImages);
+
+
+								//part4
+								theLeftSide.lastChild.onclick= function nextLevel(event){
+																				event.stopPropagation();
+																				numberOfFaces += 5;
+																				generateFaces();
+																			};
+
+								var theBody = document.getElementsByTagName("body")[0];
+
+								theBody.onclick = function gameOver() {
+																alert("Game Over!");
+																theBody.onclick = null;
+																theLeftSide.lastChild.onclick = null;
+															};
+					};
+		</script>
+	</head>
+	<body onload="generateFaces()">
+		<p><h1> Mathching Game </h1></p>
+		<p><h3> Click on the extra smiling on the left </h3></p>
+		<div id="leftSide"></div>
+		<div id="rightSide"></div>
+	</body>
+	</html>
